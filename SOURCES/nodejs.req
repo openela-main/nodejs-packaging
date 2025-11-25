@@ -633,9 +633,9 @@ def has_only_bundled_dependencies(module_dir_path):
             for basename in os.listdir(dependency_root_path)
         )
         bundled_dependency_iter = (
-            os.path.realpath(path)
+            path
             for path in dependency_path_iter
-            if not os.path.islink(path) or path.startswith(module_root_path)
+            if not os.path.islink(path) or os.path.realpath(path).startswith(module_root_path)
         )
 
         return any(bundled_dependency_iter)
