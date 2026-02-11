@@ -2,7 +2,7 @@
 
 Name:           nodejs-packaging
 Version:        2021.06
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        RPM Macros and Utilities for Node.js Packaging
 BuildArch:      noarch
 License:        MIT
@@ -87,6 +87,9 @@ install -Dpm0755 nodejs-packaging-bundler %{buildroot}%{_bindir}/nodejs-packagin
 
 
 %changelog
+* Fri Oct 17 2025 Andrei Radchenko <aradchen@redhat.com> - 2021.06-5
+- nodejs.req to properly detect bundled deps
+
 * Tue Nov 12 2024 Jarek Prokop <jprokop@redhat.com> - 2021.06-4
 - Exclude ix86 arches from building.
   Related: RHEL-35991
