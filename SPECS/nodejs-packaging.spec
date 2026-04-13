@@ -2,7 +2,7 @@
 
 Name:           nodejs-packaging
 Version:        2021.06
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        RPM Macros and Utilities for Node.js Packaging
 BuildArch:      noarch
 License:        MIT
@@ -83,6 +83,10 @@ install -Dpm0755 nodejs-packaging-bundler %{buildroot}%{_bindir}/nodejs-packagin
 
 
 %changelog
+* Tue Nov 11 2025 Tomas Juhasz <tjuhasz@redhat.com> - 2021.06-6
+- Properly handle @group/package deps in nodejs-symlink-deps
+  Resolves: RHEL-121579
+
 * Fri Oct 17 2025 Andrei Radchenko <aradchen@redhat.com> - 2021.06-5
 - nodejs.req to properly detect bundled deps
 

@@ -30,6 +30,8 @@ import shutil
 import sys
 
 def symlink(source, dest):
+    if os.path.sep in dest:
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
     try:
         os.symlink(source, dest)
     except OSError:
